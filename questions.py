@@ -28,8 +28,9 @@ correct_answers_index = [1, 2, 0, 3, 1]
 score = 0
 
 # Creamos una lista de tuplas donde cada una contiene una pregunta, sus posibles respuestas y
-# el índice de la respuesta correcta. Luego, seleccionamos 3 aleatoriamente las guardamos en una nueva lista
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
+# el índice de la respuesta correcta. Luego, seleccionamos 3 aleatoriamente (que no pueden
+# repetirse) y las guardamos en una nueva lista
+questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3)
 
 # El usuario deberá contestar 3 preguntas
 for question, possible_answers, correct_answer_index in questions_to_ask:
